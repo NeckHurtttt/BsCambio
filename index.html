@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BsCambio</title>
+<meta name="description" content="Dólar oficial y paralelo en Bolivia, en vivo, con historial y calculadora.">
+<meta name="theme-color" content="#07070d">
+<link rel="icon" href="icono.svg">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header>
+  <img src="icono.svg" alt="" width="42" height="42">
+  <div><h1>BS<span>CAMBIO</span></h1><p>El dólar en Bolivia, en vivo</p></div>
+  <div id="vivo"><i></i> <span>conectando…</span></div>
+</header>
+<section id="tarjetas">
+  <article class="t of"><small>OFICIAL</small><b id="of">—</b><span id="of2">Bs por dólar</span></article>
+  <article class="t pa"><small>PARALELO (USDT P2P)</small><b id="pa">—</b><span id="pa2">compra — · venta —</span></article>
+  <article class="t br"><small>BRECHA</small><b id="br">—</b><span>paralelo sobre oficial</span></article>
+</section>
+<section class="dos">
+  <article class="panel">
+    <h2>CALCULADORA</h2>
+    <div class="calc">
+      <label>DÓLARES<input id="usd" type="number" min="0" step="any" value="100" inputmode="decimal"></label>
+      <label>TASA<select id="tasa"><option value="pa">Paralelo (venta)</option><option value="pac">Paralelo (compra)</option><option value="of">Oficial</option></select></label>
+      <label>BOLIVIANOS<input id="bob" type="number" min="0" step="any" inputmode="decimal"></label>
+    </div>
+    <p id="dif" class="nota"></p>
+  </article>
+  <article class="panel">
+    <h2>EXCHANGES <small id="exf"></small></h2>
+    <table id="ex"><thead><tr><th>Dónde</th><th>Compran a</th><th>Venden a</th></tr></thead><tbody></tbody></table>
+  </article>
+</section>
+<section class="panel ancho">
+  <h2>HISTORIAL <span class="rangos"><button data-d="1">24 H</button><button data-d="7" class="on">7 D</button><button data-d="30">30 D</button><button data-d="0">TODO</button></span></h2>
+  <svg id="graf" viewBox="0 0 900 300" role="img" aria-label="Historial del dólar"></svg>
+  <p class="nota">Una GitHub Action guarda una foto cada hora en <code>datos/historial.csv</code>. Puedes bajarlo: <a href="datos/historial.csv" download>historial.csv</a>.</p>
+</section>
+<footer>BSCAMBIO · datos de <a href="https://bo.dolarapi.com">DolarApi</a> y <a href="https://criptoya.com">CriptoYa</a> · referencial, no es asesoría financiera · <a href="https://github.com/NeckHurtttt/BsCambio">código</a></footer>
+<script src="app.js"></script>
+</body>
+</html>
